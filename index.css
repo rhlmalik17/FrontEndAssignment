@@ -1,0 +1,151 @@
+#header
+{
+    height: 80px;
+    background-color: black;
+    overflow: hidden;
+}
+body{
+    margin: 0;
+    background-color: #e6e4e1;
+}
+#logo{
+    color: white;
+    font-size: 25px;
+    font-family: 'Indie Flower', cursive;
+    text-shadow: 0 0 10px white;
+    transition: 0.2s;
+}
+#logo:hover {
+    text-shadow: 0 0 0px white;
+    cursor: pointer;
+}
+#left{
+    float: left;
+    padding-left: 50px;
+}
+#right{
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    padding-right: 60px;
+    font-family: 'Indie Flower', cursive;
+    transform: translateY(10px);
+}
+#right p{
+    color: white;
+    transition: 0.2s;
+    font-size: 20px;
+    cursor: pointer;
+}
+#right p:hover{
+    text-shadow: 0 0 10px white;
+}
+
+#info{
+    height: 500px;
+    background-color: white;
+    margin: 60px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 10px #c4bfbe;
+
+}
+
+#menubar
+{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    transform: translateY(150px);
+}
+#menubar #like{
+    height: 60px;
+    width: 60px;
+    border-radius:30px;
+    background-color: #f2f0f0;
+    box-shadow: 2px 4px 5px #c9bebd;
+}
+#menubar #swipeleft{
+    height: 60px;
+    width: 80px;
+    border-radius:30px;
+    background-color: #f2f0f0;
+    box-shadow: 2px 4px 5px #c9bebd;
+    text-align: center;
+}
+#menubar #swiperight{
+    height: 60px;
+    width: 80px;
+    border-radius:30px;
+    background-color: #f2f0f0;
+    box-shadow: 2px 4px 5px #c9bebd;
+}
+#container{
+    width: 100%;
+    padding-left: 39%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: space-between;
+}
+#menubar div{
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#menubar #swipeleft:hover{
+    box-shadow: 2px 8px 10px #eb2d2d;
+    transform: scale(1.1) translateY(-5px);
+
+}
+#menubar #like:hover{
+    box-shadow: 2px 8px 10px #2deb79;
+    transform: scale(1.1) translateY(-5px);
+
+}
+#menubar #swiperight:hover{
+    box-shadow: 2px 8px 10px #2ca4e6;
+    transform: scale(1.1) translateY(-5px);
+
+}
+#container #image{
+    overflow: hidden;
+    height: 140px;
+    width: 150px;
+    border: 2px solid #a8a8a8;
+    border-radius: 20px;
+    position: relative;
+    left: 50px;
+    top: 20px;
+    text-align: center;
+}
+#container #details{
+    height: 80px;
+}
+#ifNoImageFound{
+    height: 30px;
+    width: 90px;
+    position: relative;
+    top: 45%;
+    left: 31%;
+    border: 2px solid #b8b6b6;
+    border-radius: 15px
+}
+#picture{
+    transform: scale(1.2);
+    position: relative;
+
+    border-right: 10px;
+}
+#details p{
+    font-size: 18px;
+    font-family: 'Indie Flower', cursive;
+}
+#details
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    top: 40px;
+}

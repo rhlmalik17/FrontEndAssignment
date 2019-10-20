@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+    <link href="index.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Long+Cang&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="header">
+    <div id="left"><p id="logo">Meet Strangers<i class="fas fa-heart"></i></div>
+    <div id="right">
+        <p id="home">HOME</p>
+        <p id="contactUs">CONTACT US</p>
+        <p id="help">HELP</p>
+    </div>
+    </p>
+</div>
+<div id="body">
+    <div id="info">
+        <div id="container">
+            <div id="image">
+                <div id="animatecolor">
+                    <img id="picture" src="" alt="NULL"></img>
+                </div>
+            </div>
+            <div id="details">
+                <p id="name"></p>
+                <p id="gender"></p>
+                <p id="city">From </p>
+            </div>
+        <div id="menubar">
+<!--            <button onclick="myFunction()">Swipe Right</button>-->
+            <div id="swipeleft">
+                <i style="position: relative; top: 23px; transform: scale(2); color: #eb2d2d;" class="fas fa-times"></i>
+            </div>
+            <div id="like">
+                <i style="position: relative; top: 23px; transform: scale(2); color: #2deb79;" class="fas fa-heart"></i>
+            </div>
+            <div id="swiperight" onclick="x()">
+                <i style="position: relative; top: 23px; transform: scale(2); color: #2ca4e6;" class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+<script>
+    function x() {
+        var data;
+        var XHR = new XMLHttpRequest();
+        XHR.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                data = JSON.parse(this.responseText);
+                console.log(data);
+                //ATTACH PICTURE
+                document.getElementById("picture").src = data.results[0].picture.large;
+                //ATTACH NAME
+                var name = data.results[0].name.title + " " + data.results[0].name.first + " " + data.results[0].name.last;
+                var age = data.results[0].dob.age;
+                document.getElementById("name").innerHTML = name + " , " + age;
+                //ATTACH GENDER
+                var gender = data.results[0].gender;
+                document.getElementById('gender').innerHTML = gender;
+                //ATTACH CITY
+                var city = data.results[0].location.city;
+
+                document.getElementById('city').innerHTML = 'From: ' + city;
+            }
+        }
+        XHR.open("GET", "https://randomuser.me/api", true);
+        XHR.send();
+    }x();
+
+</script>
+<script src="https://kit.fontawesome.com/4434ec0af1.js" crossorigin="anonymous"></script>
+</html>
